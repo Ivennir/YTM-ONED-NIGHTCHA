@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to YouTube Music...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .popup {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            animation: popupJump 0.6s ease-out;
+        }
+
+        .popup h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .popup p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .popup button {
+            padding: 10px 20px;
+            font-size: 14px;
+            color: white;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .popup button:hover {
+            background-color: #cc0000;
+        }
+
+        .popup .watermark {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 10px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes popupJump {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) translateY(100px);
+            }
+            80% {
+                transform: scale(1.1) translateY(-10px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+    </style>
+    <script>
+        function redirectToYTMusic() {
+            // Redirect ke aplikasi YouTube Music melalui link
+            window.location.href = "https://music.youtube.com/watch?v=syFZfO_wfMQ";
+        }
+
+        window.onload = function () {
+            // Otomatis memunculkan pop-up setelah halaman dimuat
+            document.querySelector(".popup").style.display = "block";
+        };
+    </script>
+</head>
+<body>
+    <div class="popup" style="display: none;">
+        <h1>Lanjutkan ke YouTube Music</h1>
+        <p>Klik "Lanjutkan" untuk membuka YouTube Music.</p>
+        <button onclick="redirectToYTMusic()">Lanjutkan</button>
+        <div class="watermark">Ivennir ©2024</div>
+    </div>
+</body>
+</html>
